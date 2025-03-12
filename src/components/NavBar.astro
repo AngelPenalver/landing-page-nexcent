@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/Logo.svg";
+---
+
+<div class="nav-bar_content">
+  <ul>
+    <li><Image src={Logo} alt="Logo" /></li>
+  </ul>
+  <ul id="disable" class="navegation">
+    <li><a>Home</a></li>
+    <li><a>Service</a></li>
+    <li><a>Feature</a></li>
+    <li><a>Product</a></li>
+    <li><a>Testimonial</a></li>
+    <li><a>FAQ</a></li>
+  </ul>
+  <ul id="disable">
+    <li><button id="login">Login</button></li>
+    <li><button>Sign up</button></li>
+  </ul>
+</div>
+<style>
+  #disable {
+    display: none;
+  }
+  .nav-bar_content {
+    height: 84px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: var(--Color-Neutral-Silver);
+  }
+  .nav-bar_content ul {
+    list-style: none;
+  }
+  .nav-bar_content button {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--Color-Brand-Primary);
+    font-size: clamp(0.75rem, 0.9rem + 1.5vw, 1rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    color: var(--Color-Neutral-White);
+  }
+  #login {
+    background: var(--Color-Neutral-Silver) !important;
+    color: var(--Color-Brand-Primary);
+  }
+  .navegation {
+    gap: 40px !important;
+  }
+  .navegation li a {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--Color-Text-Gray-900) !important;
+  }
+  @media (min-width: 768px) {
+    .nav-bar_content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    .nav-bar_content ul {
+      display: flex !important;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+</style>

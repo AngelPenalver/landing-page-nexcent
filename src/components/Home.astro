@@ -1,0 +1,115 @@
+---
+import NavBar from "./NavBar.astro";
+import { Image } from "astro:assets";
+import Background_IMG from "../assets/Background_Home.svg";
+---
+
+<section class="home-contain">
+  <NavBar />
+  <div class="home-content">
+    <div class="home-text">
+      <div id="title">
+        <h1>
+          Lessons and insights <span id="subtitle-text">from 8 years</span>
+        </h1>
+      </div>
+      <p>
+        Where to grow your business as a photographer: site or social media?
+      </p>
+      <div id="img-responsive">
+        <Image src={Background_IMG} alt="Ilustration" />
+      </div>
+      <button>Register</button>
+    </div>
+    <div class="home-img">
+      <Image src={Background_IMG} alt="Ilustration" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-contain {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+    height: 100%;
+    background: var(--Color-Neutral-Silver);
+  }
+  .home-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+  }
+  .home-img {
+    display: none;
+  }
+  #title {
+    display: flex;
+  }
+  #title h1 {
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-style: normal;
+    font-weight: 600;
+    color: var(--Color-Neutral-D_Grey);
+    margin: 0;
+    padding: 0;
+  }
+  #subtitle-text {
+    color: var(--Color-Brand-Primary, #4caf4f);
+  }
+  .home-content button {
+    display: flex;
+    padding: 14px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--Color-Brand-Primary);
+    color: var(--Color-Neutral-White);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin-top: 1rem;
+  }
+  .home-content p {
+    color: var(--Neutral-Grey, #717171);
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (min-width: 768px) {
+    .home-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 4rem 0;
+    }
+    .home-img {
+      display: block;
+    }
+    .home-text {
+      /* gap:20px; */
+      width: 42%;
+      align-items: flex-start;
+    }
+    #img-responsive{
+        display: none;
+    }
+  }
+</style>
