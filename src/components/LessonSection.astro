@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+const {title, description, image} = Astro.props
+---
+
+<section class="section-lesson-contain">
+  <div class="section-lesson-content">
+    <div class="lesson-img">
+      <Image src={image} alt={"Lesson"} />
+    </div>
+    <div class="lesson-text">
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <div class="lesson-img" id="responsive-img">
+        <Image src={image} alt={"Lesson"} />
+      </div>
+      <button>Learn More</button>
+    </div>
+  </div>
+</section>
+<style>
+  .section-lesson-contain {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+  }
+  .section-lesson-content {
+  }
+  .lesson-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+  .lesson-text h3 {
+    color: var(--Color-Neutral-D_Grey);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 44px;
+    margin: 0;
+    width: 80%;
+  }
+  .lesson-text p {
+    font-size: clamp(0.5rem, 3vw, 0.8rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--Color-Neutral-Grey);
+    margin: 0;
+    width: 90%;
+  }
+  .lesson-text button {
+    display: flex;
+    padding: 14px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: var(--Color-Brand-Primary);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--Color-Neutral-White);
+    text-align: center;
+    border: none;
+  }
+  .lesson-img{
+    display: none;
+  }
+  #responsive-img{
+    display: block;
+    margin: 1rem 0;
+  }
+  #responsive-img img{
+    width: 300px;
+  }
+  @media (min-width: 769px) {
+    .section-lesson-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    .lesson-text {
+      width: 49%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: start;
+      gap: 1.5rem;
+    }
+
+    #responsive-img {
+      display: none;
+    }
+    .lesson-img{
+        display: block;
+    }
+  }
+</style>

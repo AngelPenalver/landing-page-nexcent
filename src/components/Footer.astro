@@ -1,0 +1,199 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/Logo-white.svg";
+import IconInput from "../assets/icon_input.svg";
+---
+
+<section class="section-footer-contain">
+  <footer class="section-footer-content">
+    <div class="footer-header" id="no-mobile">
+      <Image src={Logo} alt={"Logo"} />
+      <div>
+        <p>Copyright © 2020 Nexcent ltd. <br />All rights reserve</p>
+        <a
+          href="https://www.linkedin.com/in/angelpenalver"
+          target="_blank"
+          rel="noopener noreferrer">Design by Ángel Peñalver</a
+        >
+      </div>
+      <!-- <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul> -->
+    </div>
+    <div class="footer-content">
+      <ul>
+        <li><h3>Company</h3></li>
+        <li><a>About us</a></li>
+        <li><a>Blog</a></li>
+        <li><a>Contact us</a></li>
+        <li><a>Pricing</a></li>
+        <li><a>Testimonial</a></li>
+      </ul>
+      <ul>
+        <li><h3>Support</h3></li>
+        <li><a>Help center</a></li>
+        <li><a>Terms of service</a></li>
+        <li><a>Legal</a></li>
+        <li><a>Privacy policy</a></li>
+        <li><a>Status</a></li>
+      </ul>
+      <ul>
+        <li><h3>Stay up to date</h3></li>
+        <li>
+          <div id="input">
+            <input type="text" placeholder="Your email address" />
+            <Image src={IconInput} alt={"IconInput"} />
+          </div>
+        </li>
+      </ul>
+      <div class="footer-header" id="mobile">
+        <Image src={Logo} alt={"Logo"} />
+        <div>
+          <p>Copyright © 2020 Nexcent ltd. <br />All rights reserve</p>
+          <a
+            href="https://www.linkedin.com/in/angelpenalver"
+            target="_blank"
+            rel="noopener noreferrer">Design by Ángel Peñalver</a
+          >
+        </div>
+        <!-- <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              </ul> -->
+      </div>
+    </div>
+  </footer>
+</section>
+
+<style>
+  .section-footer-contain {
+    display: flex;
+    padding: 3rem 0rem;
+    align-items: center;
+    background-color: var(--Color-Neutral-Black);
+    color: var(--Color-Neutral-White);
+    width: 100%;
+  }
+  .section-footer-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5rem;
+  }
+  .footer-content ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    list-style: none;
+    gap: 0.25rem;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-content a {
+    color: var(--Color-Neutral-Silver, #f5f7fa);
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+  }
+  .footer-content h3 {
+    color: var(--Neutral-White, #fff);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    margin-top: 0;
+  }
+  #input {
+    position: relative;
+  }
+  #input input {
+    width: 255px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #ffffff20;
+    border: none;
+    box-sizing: border-box;
+    padding: 0rem 1rem;
+    position: relative;
+  }
+  #input img {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+  }
+  .footer-content input::placeholder {
+    color: var(--Color-Text-Gray-300);
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
+    font-style: normal;
+  }
+  .footer-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    width: 62%;
+    margin-top: 1rem;
+  }
+  .footer-header p {
+    color: var(--Neutral-Silver, #f5f7fa);
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+  }
+  #no-mobile {
+    display: none;
+  }
+  #mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @media (min-width: 769px) {
+    .section-footer-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding: 0 6rem;
+      gap: 10rem;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      width: 60%;
+      gap: 4rem;
+    }
+    .footer-header {
+    }
+    #mobile {
+      display: none;
+    }
+    #no-mobile {
+      display: flex;
+      gap: 2rem;
+    }
+    .footer-header a {
+      color: #fff;
+      font-weight: 300;
+      font-size: clamp(0.75rem, 3vw, 0.8rem);
+    }
+  }
+</style>

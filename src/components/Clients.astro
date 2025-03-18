@@ -1,0 +1,114 @@
+---
+import { Image } from "astro:assets";
+import Logo1 from "../assets/Logo-0.png";
+import Logo2 from "../assets/Logo-1.png";
+import Logo3 from "../assets/Logo-2.png";
+import Logo4 from "../assets/Logo-3.png";
+import Logo5 from "../assets/Logo-4.png";
+import Logo6 from "../assets/Logo-5.png";
+import Logo7 from "../assets/Logo-6.png";
+---
+
+<section class="client-section-contain">
+  <div class="client-section-content">
+    <h2>Our Clients</h2>
+    <p>We have been working with some Fortune 500+ clients</p>
+    <div id="clients">
+      <ul>
+        <li><Image src={Logo1} alt="Logo1" /></li>
+        <li><Image src={Logo2} alt="Logo2" /></li>
+        <li><Image src={Logo3} alt="Logo3" /></li>
+        <li><Image src={Logo4} alt="Logo4" /></li>
+        <li><Image src={Logo5} alt="Logo5" /></li>
+        <li><Image src={Logo6} alt="Logo6" /></li>
+        <li><Image src={Logo7} alt="Logo7" /></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<style>
+  .client-section-contain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+  }
+
+  .client-section-content {
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .client-section-content h2 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 44px;
+    color: var(--Color-Neutral-D_Grey);
+    margin-bottom: 1rem;
+  }
+
+  .client-section-content p {
+    font-size: clamp(0.8rem, 3vw, 1.1rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--Color-Neutral-Grey);
+    /* margin-bottom: 2rem; */
+    margin: 0;
+  }
+
+  .client-logos-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  #clients{
+    padding: 2rem 0;
+  }
+  #clients ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    line-height: 40px;
+  }
+
+  #clients ul li {
+    flex: 1 1 calc(25% - 1rem);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: .25rem 0;
+  }
+
+  #clients ul li img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 769px) {
+    .client-logos-container {
+      overflow-x: auto;
+    }
+    #clients  {
+      padding: 2rem 0;
+    }
+    #clients ul {
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      align-items: center;
+
+    }
+
+    #clients ul li {
+      flex: 0 0 auto;
+      margin-right: 2rem;
+    }
+  }
+</style>

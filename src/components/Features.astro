@@ -1,0 +1,169 @@
+---
+import { Image } from "astro:assets";
+import LogoAssociates from "../assets/asociation_logo.svg";
+import LogoGroup from "../assets/groups_logo.svg";
+import LogoPerson from "../assets/person_logo.svg";
+---
+
+<section class="section-features-contain">
+  <div class="section-features-content">
+    <h2>Manage your entire community in a single system</h2>
+    <p>Who is Nextcent suitable for?</p>
+    <div>
+      <ul>
+        <li>
+          <div class="card">
+            <div class="images-content">
+              <div id="rectangle"></div>
+              <Image src={LogoPerson} alt="Persons" />
+            </div>
+            <h3>Membership Organisations</h3>
+            <p>
+              Our membership management software provides full automation of
+              membership renewals and payments
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <div class="images-content">
+              <div id="rectangle"></div>
+              <Image src={LogoAssociates} alt="Associate" />
+            </div>
+            <h3>National Associations</h3>
+            <p>
+              Our membership management software provides full automation of
+              membership renewals and payments
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <div class="images-content">
+              <div id="rectangle"></div>
+              <Image src={LogoGroup} alt="Groups" />
+            </div>
+            <h3>Clubs And Groups</h3>
+            <p>
+              Our membership management software provides full automation of
+              membership renewals and payments
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<style>
+  .section-features-contain {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 2rem 0; */
+  }
+  .section-features-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .section-features-content h2 {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 44px;
+    color: var(--Color-Neutral-D_Grey);
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    margin: 0;
+    width: 80%;
+  }
+  .section-features-content p {
+    color: var(--Color-Neutral-Grey);
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 1rem 0;
+  }
+  .section-features-content + div{
+    width: 100%;
+  }
+  .section-features-contain ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+    
+  }
+  .card {
+    display: flex;
+    width: 299px;
+    padding: 24px 32px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-shrink: 0;
+    box-shadow: 0px 2px 4px 0px rgba(171, 190, 209, 0.20);
+  }
+  .card h3 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    color: var(--Color-Neutral-D_Grey);
+    margin: 0;
+    padding: 0;
+    width:60%;
+  }
+  .card p {
+    margin: 0;
+    padding: 0;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--Color-Neutral-Grey);
+    width: 90%;
+    line-height: 24px;
+  }
+  .images-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+  }
+  .images-content div {
+    width: 50px;
+    height: 49px;
+    flex-shrink: 0;
+    border-radius: 18px 5px 10px 5px;
+    background: var(--Color-Tint-T5, #e8f5e9);
+    position: absolute;
+    /* top: 20px; */
+    right: -22px;
+  }
+  .images-content img {
+    z-index: 999;
+  }
+  @media (min-width: 769px) {
+    .section-features-content h2 {
+      width: 65%;
+    }
+    .section-features-content h3 {
+      width: 90%;
+    }
+    .section-features-content ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly !important;
+      gap: 2rem;
+    }
+  }
+</style>

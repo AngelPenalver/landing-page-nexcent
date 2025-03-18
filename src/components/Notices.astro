@@ -1,0 +1,190 @@
+---
+import { Image } from "astro:assets";
+import Image1 from "../assets/image_notice_1.png";
+import Image2 from "../assets/image_notice_2.png";
+import Image3 from "../assets/image_notice_3.png";
+import ArrowRight from "../assets/Icon_Right.svg";
+---
+
+<section class="section-notice-contain">
+  <div class="section-notice-content">
+    <div class="notice-header">
+      <h2>Caring is the new marketing</h2>
+      <p>
+        The Nexcent blog is the best place to read about the latest membership
+        insights, trends and more. See who's joining the community, read about
+        how our community are increasing their membership income and lot's
+        more.​
+      </p>
+    </div>
+    <div class="notice-contain-card">
+      <ul>
+        <li id="card">
+          <Image src={Image1} alt={"Image Notice 1"} />
+          <div id="tag-image">
+            <p>Creating Streamlined Safeguarding Processes with OneRen</p>
+            <a>Readmore <Image src={ArrowRight} alt={"Arrow Right"} /> </a>
+          </div>
+        </li>
+        <li id="card">
+          <Image src={Image2} alt={"Image Notice 2"} />
+          <div id="tag-image">
+            <p>
+              What are your safeguarding responsibilities and how can you manage
+              them?
+            </p>
+            <a>Readmore <Image src={ArrowRight} alt={"Arrow Right"} /> </a>
+          </div>
+        </li>
+        <li id="card">
+          <Image src={Image3} alt={"Image Notice 3"} />
+          <div id="tag-image">
+            <p>Revamping the Membership Model with Triathlon Australia</p>
+
+            <a>Readmore <Image src={ArrowRight} alt={"Arrow Right"} /> </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<style>
+  .section-notice-contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+  }
+
+  .section-notice-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .notice-contain-card ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+  }
+  .notice-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  .notice-header h2 {
+    font-size: clamp(1.75rem, 3vw, 2rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 44px;
+    color: var(--Color-Neutral-D_Grey, #4d4d4d);
+    padding: 0;
+    margin: 0;
+  }
+  .notice-header p {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--Color-Neutral-Grey, #717171);
+    padding: 0;
+    margin: 0;
+  }
+  #card {
+    width: fit-content;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #tag-image p {
+    font-size: clamp(0.9rem, 3vw, 1.15rem);
+    font-style: normal;
+    font-weight: 600;
+    color: var(--Color-Neutral-Grey, #717171);
+    text-align: center;
+    line-height: 20px;
+    margin: 0;
+  }
+  #card img {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    border-radius: 8px;
+  }
+  #tag-image {
+    position: absolute;
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 16px;
+    text-align: center;
+    bottom: 0px;
+    background: #fff;
+    width: 220px;
+    height: fit-content;
+    border-radius: 8px;
+    background: var(--Color-Neutral-Silver, #f5f7fa);
+    box-shadow: 0px 8px 16px 0px rgba(171, 190, 209, 0.4);
+  }
+  #tag-image a {
+    color: var(--Brand-Primary, #4caf4f);
+    font-size: clamp(0.9rem, 3vw, 1.15rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  #tag-image a img {
+    width: 18px;
+    height: 10px;
+  }
+  @media (min-width: 769px) {
+    .section-notice-contain {
+      padding: 4rem 0 !important;
+      width: 100%;
+    }
+    .section-notice-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .notice-contain-card {
+      width: 100%;
+    }
+    .notice-contain-card ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 3rem 2rem;
+    }
+    .notice-header p {
+      width: 50%;
+    }
+    #card img {
+      width: 368px;
+      height: 290px;
+      position: relative;
+      border-radius: 8px;
+    }
+    #tag-image {
+      width: 280px;
+      height: 150px;
+      bottom: -60px;
+    }
+    #tag-image p {
+      line-height: 24px;
+    }
+  }
+</style>

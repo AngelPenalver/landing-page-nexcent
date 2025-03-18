@@ -1,0 +1,174 @@
+---
+import { Image } from "astro:assets";
+import imageAssociation from "../assets/image_associations.png";
+import Logo1 from "../assets/Logo-0.png";
+import Logo2 from "../assets/Logo-1.png";
+import Logo3 from "../assets/Logo-2.png";
+import Logo4 from "../assets/Logo-3.png";
+import Logo5 from "../assets/Logo-4.png";
+import Logo6 from "../assets/Logo-5.png";
+import ArrowRight from "../assets/Icon_Right.svg";
+---
+
+<section class="section-association-contain">
+  <div class="section-association-content">
+    <div class="association-img" id="no-mobile">
+      <Image src={imageAssociation} alt={"Associations"} />
+    </div>
+    <div class="association-text">
+      <p>
+        Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis
+        sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus.
+        Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut
+        molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie,
+        nec molestie mi blandit. Suspendisse cursus tellus sed augue ultrices,
+        quis tristique nulla sodales. Suspendisse eget lorem eu turpis
+        vestibulum pretium. Suspendisse potenti. Quisque malesuada enim sapien,
+        vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget
+        efficitur libero condimentum id. Curabitur id nibh id sem dignissim
+        finibus ac sit amet magna.
+      </p>
+      <div id="img-responsive">
+        <Image src={imageAssociation} alt={"Associations"} />
+      </div>
+      <h3>Tim Smith</h3>
+      <h5>British Dragon Boat Racing Association</h5>
+      <ul>
+        <li><Image src={Logo1} alt="Logo1" /></li>
+        <li><Image src={Logo2} alt="Logo2" /></li>
+        <li><Image src={Logo3} alt="Logo3" /></li>
+        <li>
+          <Image src={Logo4} alt="Logo4" />
+          <li><Image src={Logo5} alt="Logo5" /></li>
+          <li><Image src={Logo6} alt="Logo6" /></li>
+          <li id="button_right">
+            <div>
+              <h4>Meet all customers</h4><Image src={ArrowRight} alt="Right" />
+            </div>
+          </li>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <style>
+    .section-association-contain {
+      width: 100%;
+      background-color: var(--Color-Neutral-Silver);
+    }
+    .association-text{
+      display: flex;
+      flex-direction: column;
+    }
+    .association-text ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      margin: 0;
+      margin-top: 2rem;
+      padding: 0;
+    }
+    .association-text p {
+      font-size: clamp(0.8rem, 3vw, 1rem);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      color: var(--Color-Neutral-Grey);
+      margin: 2rem 0;
+      padding: 0;
+    }
+    .section-association-content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 2rem;
+    }
+    .association-text h3 {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 28px;
+      color: var(--Color-Brand-Primary);
+      margin: 0;
+      padding: 0;
+    }
+    .association-text h5 {
+      font-size: clamp(0.8rem, 3vw, 1rem);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      color: var(--Color-Neutral-L_Grey);
+      margin: 0;
+      padding: 0;
+    }
+    #button_right {
+      height: fit-content;
+      padding-bottom: 0.5rem;
+    }
+    #button_right div {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    #button_right h4 {
+      font-size: clamp(1rem,3vw, 1.25rem);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 28px;
+      color: var(--Color-Brand-Primary);
+      margin: 0;
+      padding: 0;
+    }
+    #no-mobile {
+      display: none;
+    }
+    #img-responsive {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+    #img-responsive img {
+      width: 300px;
+      height: 300px;
+    }
+    @media (min-width: 769px) {
+      .section-association-content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        padding: 4rem 0;
+      }
+      .association-text {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin-top: 0.5rem;
+        gap: 1.25rem;
+      }
+      .section-association-content{
+        margin: 0 !important;
+      }
+      .section-association-content ul{
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 0 !important;
+      }
+      .association-text p {
+        margin: 0 !important;
+      }
+      #img-responsive {
+        display: none;
+      }
+      #no-mobile {
+        display: block;
+      }
+    }
+  </style>
+</section>

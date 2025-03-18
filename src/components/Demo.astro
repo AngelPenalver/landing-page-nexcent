@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+import ArrowRight from "../assets/arrow_right_white.svg";
+---
+
+<section class="section-demo-contain">
+  <div class="section-demo-content">
+    <h2>Pellentesque suscipit fringilla libero eu.</h2>
+    <button>Get a demo <Image src={ArrowRight} alt={"Arrow Right"} /> </button>
+  </div>
+</section>
+<style>
+  .section-demo-contain {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 3rem 0;
+    text-align: center;
+    background-color: var(--Color-Neutral-Silver);
+  }
+  .section-demo-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .section-demo-content h2 {
+    color: var(--Color-Neutral-SilverNeutral-Black, #263238);
+    text-align: center;
+    font-size: clamp(2.5rem, 3vw, 4rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 76px;
+    /* width: 60%; */
+  }
+  .section-demo-content button {
+    display: flex;
+    padding: 14px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    background: var(--Color-Brand-Primary, #4caf4f);
+    border: none;
+    color: var(--Color-Neutral-White, #fff);
+    text-align: center;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  @media (min-width:769px) {
+    .section-demo-contain {
+        padding: 2rem;
+    }
+    .section-demo-content h2{
+        width: 40%;
+    }
+  }
+</style>

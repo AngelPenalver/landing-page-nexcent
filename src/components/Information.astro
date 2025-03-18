@@ -1,0 +1,149 @@
+---
+import CardInformation from "./CardInformation.astro";
+import ImageMember from "../assets/member.png";
+import ImagePayment from "../assets/payments.png";
+import ImageEvents from "../assets/event.png";
+import ImageClub from "../assets/club.png";
+---
+
+<section class="section-information-contain">
+  <div class="section-information-content">
+    <div class="information-text">
+      <div id="title">
+        <h3>Helping a local</h3>
+        <span>business reinvent itself</span>
+      </div>
+      <p>We reached here with our hard work and dedication</p>
+    </div>
+    <div class="information-grid">
+      <ul>
+        <li>
+          <CardInformation
+            numbers="2,245,341"
+            name="Members"
+            image={ImageMember}
+          />
+        </li>
+        <li>
+          <CardInformation numbers="46,328" name="Clubs" image={ImageClub} />
+        </li>
+        <li>
+          <CardInformation
+            numbers="828,867"
+            name="Event Bookings"
+            image={ImageEvents}
+          />
+        </li>
+        <li>
+          <CardInformation
+            numbers="1,926,436"
+            name="Payments"
+            image={ImagePayment}
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<style>
+  .section-information-contain {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--Color-Neutral-Silver);
+    padding: 4rem 0;
+  }
+
+  .section-information-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; 
+    padding: 0 1rem; 
+  }
+
+  .information-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .information-grid ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #title h3 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 44px;
+    color: var(--Color-Neutral-D_Grey);
+    margin: 0;
+    padding: 0;
+  }
+
+  #title span {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 44px;
+    color: var(--Color-Brand-Primary);
+  }
+
+  .information-text {
+    width: 100%;
+    max-width: 600px;  
+    margin-bottom: 2rem;
+  }
+
+  .information-text p {
+    font-size: clamp(0.95rem, 3vw, 1rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--Color-Text-Gray_900);
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (min-width: 769px) {
+    .section-information-content {
+        width: 100%;
+        display: flex;
+      flex-direction: row;
+      align-items:center; 
+      justify-content: space-evenly; 
+      padding: 1rem 3rem;
+    }
+
+    .information-grid ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr); 
+      gap: 2rem; 
+    }
+
+    .information-text {
+      text-align: left; 
+      margin-bottom: 0;
+    }
+    #title{
+        align-items: start;
+    }
+  }
+</style>
